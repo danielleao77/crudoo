@@ -47,7 +47,7 @@ class Usuarios extends Crud{
 	
 	function validaemail($email){
 		//verifica se e-mail esta no formato correto de escrita
-		if (!ereg('^([a-zA-Z0-9.-])*([@])([a-z0-9]).([a-z]{2,3})',$email)){
+		if (!preg_match('/^([a-zA-Z0-9.-])*([@])([a-z0-9]).([a-z]{2,3})/',$email)){
 			$mensagem='E-mail Inv&aacute;lido!';
 			return $mensagem;
 		}
